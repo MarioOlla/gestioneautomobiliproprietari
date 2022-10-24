@@ -28,7 +28,7 @@ public class Automobile {
 	@Column(name = "annoimmatricolazione")
 	private int annoImmatricolazione;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@Column(name = "proprietario_id")
+	@JoinColumn(name = "proprietario_id")
 	private Proprietario proprietario;
 	
 	public Automobile() {
