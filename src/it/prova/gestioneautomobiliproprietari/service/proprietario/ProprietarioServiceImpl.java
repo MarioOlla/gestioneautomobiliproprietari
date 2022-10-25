@@ -118,4 +118,19 @@ public class ProprietarioServiceImpl implements ProprietarioService {
 
 	}
 
+	@Override
+	public Long contoProprietariDiAutoImmatricolateDal(int annoImmatricolazioneDa) throws Exception {
+		EntityManager entityManager = EntityManagerUtil.getEntityManager();
+		try {
+			proprietarioDAO.setEntityManager(entityManager);
+
+			return proprietarioDAO.countQuantConAutoImmatricolataDal(annoImmatricolazioneDa);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		} finally {
+			EntityManagerUtil.closeEntityManager(entityManager);
+		}
+	}
+
 }

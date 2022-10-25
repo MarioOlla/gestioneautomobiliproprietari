@@ -1,7 +1,6 @@
 package it.prova.gestioneautomobiliproprietari.dao.proprietario;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
@@ -47,6 +46,12 @@ public class ProprietarioDAOImpl implements ProprietarioDAO {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 
+	}
+
+	@Override
+	public Long countQuantConAutoImmatricolataDal(int dataDa) throws Exception {
+		 TypedQuery<Long> result = entityManager.createQuery("select count(p) from Proprietario p inner join p.automobili a where a.annoImmatricolazione >= ?1", Long.class);
+		 return result.setParameter(1, dataDa).getSingleResult();
 	}
 
 }

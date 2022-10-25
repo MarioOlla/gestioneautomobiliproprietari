@@ -18,5 +18,8 @@ public interface AutomobileService {
 	public void inserisciNuovo(Automobile input) throws Exception;
 
 	public void rimuovi(Automobile input) throws Exception;
-
+	
+	public List<Automobile> tutteAutomobiliConCodiceFiscaleProprietarioIniziaCon(String input)throws Exception;
+	
+	public List<Automobile> tutteLeAutoConErrori()throws Exception;
 }

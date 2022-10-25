@@ -18,5 +18,7 @@ public interface ProprietarioService {
 	public void inserisciNuovo(Proprietario input) throws Exception;
 
 	public void rimuovi(Proprietario input) throws Exception;
+	
+	public Long contoProprietariDiAutoImmatricolateDal(int annoImmatricolazioneDa)throws Exception;
 
 }

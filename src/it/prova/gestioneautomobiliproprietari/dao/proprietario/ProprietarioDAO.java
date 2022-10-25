@@ -5,4 +5,5 @@ import it.prova.gestioneautomobiliproprietari.model.Proprietario;
 
 public interface ProprietarioDAO extends IBaseDAO<Proprietario> {
 
+	public Long countQuantConAutoImmatricolataDal(int dataDa)throws Exception;
 }
